@@ -17,17 +17,15 @@ public class FileReader {
 
                 fileToStr.append((char) i);
             }
-        } catch (IOException ex) {
-
-            System.out.println(ex.getMessage());
+        } catch (IOException ignored) {
         }
 
-        String [] spitStr = fileToStr.toString().split("\n");
+        String[] spitStr = fileToStr.toString().split("\n");
 
         Profile profile = new Profile();
-        profile.setName(spitStr[0].split(" ") [1]);
-        profile.setAge(Integer.parseInt(spitStr[1].split(" ") [1]));
-        profile.setEmail(spitStr[2].split(" ") [1]);
+        profile.setName(spitStr[0].split(" ")[1]);
+        profile.setAge(Integer.parseInt(spitStr[1].split(" ")[1]));
+        profile.setEmail(spitStr[2].split(" ")[1]);
         profile.setPhone(Long.parseLong(spitStr[3].split(" ")[1]));
 
         return profile;
